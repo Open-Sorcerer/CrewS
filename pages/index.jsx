@@ -28,11 +28,11 @@ const Home = (props) => {
         :
         <CreateForm />
       }
-      {/* <footer className="bg-quaternary w-full h-fit fixed bottom-0 z-[1000]">
-        <div className="max-w-7xl mx-auto p-2 overflow-hidden">
-          <h1 className="text-2xl text-black">Made with ❤️ for EthIndia</h1>
+      <footer className="bg-quaternary w-full h-fit sticky z-50 bottom-0">
+        <div className="max-w-7xl mx-auto p-1 overflow-hidden">
+          <h1 className="text-xl text-white">Made with ❤️ for EthIndia</h1>
         </div>
-      </footer> */}
+      </footer>
     </div>
   );
 };

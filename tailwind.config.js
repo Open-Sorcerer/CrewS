@@ -8,8 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'playfair': ['Playfair Display'],
-        'raleway': ['Raleway'],
+        'playfair': ['Playfair Display', 'sans-serif'],
+        'raleway': ['Raleway', 'sans-serif'],
       },
       colors: {
         'primary': '#11379F',

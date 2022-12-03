@@ -49,7 +49,7 @@ const Navbar = (props) => {
   });
 
   return (
-    <div id="navbar" className="navbar sticky top-0 z-50 ">
+    <div id="navbar" className="navbar sticky top-0 z-50 text-secondary">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -82,12 +82,12 @@ const Navbar = (props) => {
         </div>
         <Image
           className="hover:animate-spin cursor-pointer"
-          src="/sun.png"
+          src="/wizzie.png"
           width={50}
           height={50}
           alt="yo"
           onClick={() => {
-            window.location.href = "/";
+            window.location.href = "https://github.com/Open-Sorcerer";
           }}
         />
       </div>
