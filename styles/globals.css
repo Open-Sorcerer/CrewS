@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@layer base {
+    html {
+      font-family: Mabry Pro, sans-serif;
+    }
+  }
+  
+  /* import font url */
+  @import url(//db.onlinewebfonts.com/c/95cecf452d3208890088a5b4c19c7ecf?family=Helvetica+Neue+ME);
+  
+  @font-face {
+    font-family: "Helvetica Neue ME"; 
+    src: url("//db.onlinewebfonts.com/t/95cecf452d3208890088a5b4c19c7ecf.eot"); 
+    src: url("//db.onlinewebfonts.com/t/95cecf452d3208890088a5b4c19c7ecf.eot?#iefix") format("embedded-opentype"), 
+    url("//db.onlinewebfonts.com/t/95cecf452d3208890088a5b4c19c7ecf.woff2") format("woff2"), 
+    url("//db.onlinewebfonts.com/t/95cecf452d3208890088a5b4c19c7ecf.woff") format("woff"), 
+    url("//db.onlinewebfonts.com/t/95cecf452d3208890088a5b4c19c7ecf.ttf") format("truetype"), 
+    url("//db.onlinewebfonts.com/t/95cecf452d3208890088a5b4c19c7ecf.svg#Helvetica Neue ME") format("svg");
+  }
+
+table {
+  border-collapse: collapse;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+
+  display: inline-block;
+
+}
+
+td, th {
+  border: 1px solid lightgray;
+  padding: 10px;
+  margin: 0;
+
+}
+
+.adjust-button {
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+  display: inline-block;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin: 1px;
+}
+
+var {
+  width: 40px;
+  display: inline-block;
+}
+
+
+/* Form */
+.user-box {
+  position: relative;
+}
+
+.user-box input,
+.user-box textarea {
+  width: 100%;
+  padding: 10px 10px;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  outline: none;
+  background: transparent;
+}
+
+.user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5px 10px;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.user-box input:focus ~ label,
+.user-box input:valid ~ label {
+  top: -5px;
+  left: 10px;
+  color: #220079;
+  font-size: 12px;
+}
+
+.user-box textarea:focus ~ label,
+.user-box textarea:valid ~ label {
+  top: -5px;
+  left: 10px;
+  color: #220079;
+  font-size: 12px;
+}
+
+/* Gradient Range Slider */
+#range-slider-gradient {
+  height: 24px;
+  border-radius: 12px;
+  background: #353644;
+}
+
+#range-slider-gradient .range-slider__thumb {
+  border: 6px solid #fff;
+  box-sizing: border-box;
+}
+
+#range-slider-gradient .range-slider__thumb[data-lower] {
+  background: #0073e6;
+}
+
+#range-slider-gradient .range-slider__thumb[data-upper] {
+  background: #BFF22D;
+}
+
+#range-slider-gradient .range-slider__range {
+  background: linear-gradient(to right, #0073e6, #BFF22D);
+  background-size: 200% 100%;
+  background-position: 50% 0;
+}
+
+#range-slider-gradient .range-slider__range[data-active],
+#range-slider-gradient
+  .range-slider__thumb[data-active]
+  ~ .range-slider__range {
+  animation: move-bg 0.75s infinite linear;
+}
+
+@keyframes move-bg {
+  0% {
+    background-position: 50% 0;
+  }
+
+  25% {
+    background-position: 100% 0;
+  }
+
+  50% {
+    background-position: 50% 0;
+  }
+
+  75% {
+    background-position: 0% 0;
+  }
+
+  100% {
+    background-position: 50% 0;
+  }
+}
