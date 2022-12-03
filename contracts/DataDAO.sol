@@ -35,6 +35,7 @@ contract DataDAO{
     mapping(bytes => mapping(bytes => bool)) public cidProviders;
 
     // address of the owner of DataDAO
+    address public immutable owner;
 
     struct Proposal {
         uint256 proposalID;
@@ -56,9 +57,9 @@ contract DataDAO{
 /**
  * @dev constructor: to set the owner address
  */
-constructor(address _onwer) {
-     require(owner != address(0), "invalid owner!");
-     owner = _onwer;
+constructor(address _owner) {
+     require(_owner != address(0), "invalid owner!");
+     owner = _owner;
 }
 
 /***
