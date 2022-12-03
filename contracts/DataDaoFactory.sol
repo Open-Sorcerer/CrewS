@@ -5,7 +5,7 @@ import "./DataDAO.sol";
 
 contract DataDoaFactory{
     // factory contract onwer
-    address public immutable dataDoaFactoryOwner;
+    address public immutable dataDaoFactoryOwner;
 
     // number of DataDAO created
     uint256 public numOfDataDao;
@@ -13,7 +13,7 @@ contract DataDoaFactory{
     // struct to store all the data of dataDao and dataDaoFactory contract
     struct dataDaoFactoryStruct {
         address dataDaoOnwer;
-        address dataDoaFactoryOwner;
+        address dataDaoFactoryOwner;
     }
 
     // searching the struct data of DataDao and DataDoaFactory using owner address
@@ -26,8 +26,8 @@ contract DataDoaFactory{
     /**
      * @dev constructor to get the owner address of this contract factory
      */
-    constructor(address _dataDoaFactoryOwner) {
-        dataDoaFactoryOwner = _dataDoaFactoryOwner;
+    constructor(address _dataDaoFactoryOwner) {
+        dataDaoFactoryOwner = _dataDaoFactoryOwner;
     }
 
     /**
@@ -66,16 +66,16 @@ contract DataDoaFactory{
 
      // function to withdraw the fund from contract factory
     function withdraw(uint256 amount) external payable {
-        require(msg.sender == dataDoaFactoryOwner, "ONLY_ONWER_CAN_CALL_FUNCTION");
+        require(msg.sender == dataDaoFactoryOwner, "ONLY_ONWER_CAN_CALL_FUNCTION");
         // sending money to contract owner
         require(address(this).balance >= amount, "not_enough_funds");
-        (bool success, ) = dataDoaFactoryOwner.call{value: amount}("");
+        (bool success, ) = dataDaoFactoryOwner.call{value: amount}("");
         require(success, "TRANSFER_FAILED");
     }
 
     // get the address of trustFactory contract owner
     function getAddressOfDataDaoFactoryOwner() public view returns (address) {
-        return dataDoaFactoryOwner;
+        return dataDaoFactoryOwner;
     }
 
     // receive function is used to receive Ether when msg.data is empty
