@@ -245,7 +245,7 @@ const CrewDesc = (props) => {
                   <button
                     className="relative text-black text-xl font-semibold"
                     onClick={() => {
-                      createDataDAO(address);
+                      // createDataDAO(address);
                       setIsCrewCreated(true);
                     }}
                   >
