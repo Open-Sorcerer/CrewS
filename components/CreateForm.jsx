@@ -34,7 +34,7 @@ const BreadCrumb = (props) => {
 }
 
 const CrewDesc = (props) => {
-  const { activeTab, setActiveTab, name, setName, desc, setDesc, address, setAddress, setIsCrewCreated } = props;
+  const { activeTab, setActiveTab, name, setName, desc, setDesc, address, setAddress, setIsCrewCreated, setMakeNewCrew } = props;
   return (
     <div className='w-full h-full flex flex-col justify-evenly items-center'>
       <div className='w-full h-full flex flex-col justify-evenly items-start gap-10'>
@@ -232,7 +232,7 @@ const CreateForm = (props) => {
               </h1>
               <div className='w-full h-full flex flex-col justify-start items-start p-1 sm:p-10 gap-2 sm:gap-10'>
                 <BreadCrumb setActiveTab={setActiveTab} activeTab={activeTab} />
-                <CrewDesc activeTab={activeTab} setActiveTab={setActiveTab} name={name} setName={setName} desc={desc} setDesc={setDesc} address={address} setAddress={setAddress} setIsCrewCreated={setIsCrewCreated} />
+                <CrewDesc activeTab={activeTab} setActiveTab={setActiveTab} name={name} setName={setName} desc={desc} setDesc={setDesc} address={address} setAddress={setAddress} setIsCrewCreated={setIsCrewCreated} setMakeNewCrew={setMakeNewCrew}/>
               </div>
             </div>
           </div>

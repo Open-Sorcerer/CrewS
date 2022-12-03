@@ -2,19 +2,16 @@ import Head from "next/head";
 import Image from "next/image";
 import CreateForm from "../components/CreateForm";
 
-import SplineObj from "../components/SplineObj";
 import YourCrews from './../components/YourCrews';
 const Home = (props) => {
   const { isAuthenticated } = props;
+
   return (
     <div>
       <Head>
         <title>CREWS DataDAO</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="h-screen">
-        <SplineObj scene={"/CREWS.splinecode"} />
-      </div>
       {!isAuthenticated ?
         <>
           <div className="h-fit w-full lg:w-1/2 xl:w-1/4 absolute right-2 sm:right-32 top-3 sm:top-20 z-100 text-white flex flex-col gap-5 sm:gap-6 bg-black/50 backdrop-blur-md rounded-lg p-3 sm:p-10 ">
