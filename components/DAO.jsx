@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHammer, faList, faUpLong } from '@fortawesome/free-solid-svg-icons';
 const ProposalStore = () => {
     // fetch posts from API in a array hook
+    // TODO : fetch from API
     // const proposals = useFetch('https://api.thegraph.com/subgraphs/name/1hive/uniswap-v2', {}
     const [proposals, setProposals] = useState([
         {
@@ -90,30 +91,35 @@ const CreateProposal = () => {
     )
 }
 
-const DAO = () => {
+const DAO = (props) => {
+    const {selectedDAO} = props;    // id of DAO in question
     const [activeTab, setActiveTab] = useState(0);
     return (
-        <div className='w-full h-full flex flex-col sm:flex-row justify-evenly items-start py-10 text-xl gap-3'>
-            <div className='w-full sm:w-2/12 h-full flex flex-row sm:flex-col justify-start items-start border-r-2 border-primary/40 sm:mx-2 gap-5'>
-                <div className='w-full h-fit flex flex-col sm:flex-row justify-start items-center bg-cyan-500/30 p-3 gap-3'>
-                    <img class="p-1 w-12 h-12 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src="/pic1.png" alt="Bordered avatar" />
-                    <div className='w-full h-full flex flex-row sm:flex-col justify-evenly items-center'>
-                        <h1 className='text-white text-sm'>0x1234567890</h1>
-                        <h1 className='text-white text-sm'>$ 5.76</h1>
+        <div className='w-screen h-screen flex justify-center items-start'>
+            <div className='w-full h-fit sm:w-10/12 sm:h-10/12 flex justify-evenly items-center mt-20 sm:mt-0 backdrop-blur-md bg-quaternary/60 rounded-xl text-white border border-secondary/40 hover:border-secondary/70'>
+                <div className='w-full h-full flex flex-col sm:flex-row justify-evenly items-start py-10 text-xl gap-3'>
+                    <div className='w-full sm:w-2/12 h-full flex flex-row sm:flex-col justify-start items-start border-r-2 border-primary/40 sm:mx-2 gap-5'>
+                        <div className='w-full h-fit flex flex-col sm:flex-row justify-start items-center bg-cyan-500/30 p-3 gap-3'>
+                            <img class="p-1 w-12 h-12 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src="/pic1.png" alt="Bordered avatar" />
+                            <div className='w-full h-full flex flex-row sm:flex-col justify-evenly items-center'>
+                                <h1 className='text-white text-sm'>0x1234567890</h1>
+                                <h1 className='text-white text-sm'>$ 5.76</h1>
+                            </div>
+                        </div>
+                        <ul className='w-full'>
+                            <li className='w-full flex justify-start gap-2 items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700' onClick={() => setActiveTab(0)}>
+                                <FontAwesomeIcon icon={faHammer} className='h-5 w-5 text-gray-300' />
+                                <h1>Create Proposal</h1>
+                            </li>
+                            <li className='w-full flex justify-start gap-2 items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700' onClick={() => setActiveTab(1)}>
+                                <FontAwesomeIcon icon={faList} className='h-5 w-5 text-gray-300' />
+                                <h1>Proposals</h1>
+                            </li>
+                        </ul>
                     </div>
+                    {activeTab === 0 ? <CreateProposal /> : <ProposalStore />}
                 </div>
-                <ul className='w-full'>
-                    <li className='w-full flex justify-start gap-2 items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700' onClick={() => setActiveTab(0)}>
-                        <FontAwesomeIcon icon={faHammer} className='h-5 w-5 text-gray-300' />
-                        <h1>Create Proposal</h1>
-                    </li>
-                    <li className='w-full flex justify-start gap-2 items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700' onClick={() => setActiveTab(1)}>
-                        <FontAwesomeIcon icon={faList} className='h-5 w-5 text-gray-300' />
-                        <h1>Proposals</h1>
-                    </li>
-                </ul>
             </div>
-            {activeTab === 0 ? <CreateProposal /> : <ProposalStore />}
         </div>
     )
 }

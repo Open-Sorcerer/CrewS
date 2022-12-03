@@ -3,6 +3,7 @@ import Image from "next/image";
 import CreateForm from "../components/CreateForm";
 
 import SplineObj from "../components/SplineObj";
+import YourCrews from './../components/YourCrews';
 const Home = (props) => {
   const { isAuthenticated } = props;
   return (
@@ -12,7 +13,7 @@ const Home = (props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="h-screen">
-        {/* <SplineObj scene={"/CREWS.splinecode"} /> */}
+        <SplineObj scene={"/CREWS.splinecode"} />
       </div>
       {!isAuthenticated ?
         <>
@@ -27,7 +28,8 @@ const Home = (props) => {
         </>
         :
         <div className="h-full w-full absolute top-0 z-100 text-white flex flex-col justify-center items-center gap-5 sm:gap-6 rounded-lg p-3 sm:p-16 bg-quaternary/50">
-          <CreateForm />
+          {/* <CreateForm /> */}
+          <YourCrews/>
         </div>
       }
       <footer className="bg-quaternary w-full h-fit sticky z-50 bottom-0">
