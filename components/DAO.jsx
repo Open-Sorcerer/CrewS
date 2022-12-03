@@ -1,10 +1,11 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHammer, faList, faUpLong } from "@fortawesome/free-solid-svg-icons";
 import { useSmartContract } from "../hooks/useSmartContract";
+
 const ProposalStore = () => {
-  const { getDataDaoMetadata } = useSmartContract();
+  const { getDataDaoMetadata, createDataDao } = useSmartContract();
 
   // fetch posts from API in a array hook
   // TODO : fetch from API
@@ -45,7 +46,7 @@ const ProposalStore = () => {
 
   return (
     <div className="w-10/12 h-full flex flex-col justify-start items-start gap-5 px-5">
-      {proposals.map((proposal) => {
+      {proposals?.map((proposal) => {
         return (
           <div
             className="w-full h-full flex flex-col justify-start items-start flex-wrap gap-3"
@@ -86,6 +87,7 @@ const ProposalStore = () => {
 
 const CreateProposal = () => {
   const [proposal, setProposal] = useState("");
+  const { getDataDaoMetadata, createDataDao } = useSmartContract();
   const someFx = () => {
     console.log("Do nothing");
   };
@@ -113,7 +115,7 @@ const CreateProposal = () => {
           <span className="absolute rounded-lg inset-0 w-full h-full bg-secondary border-2 border-black group-hover:bg-tertiary"></span>
           <button
             className="relative text-black text-xl font-semibold"
-            onClick={() => someFx}
+            onClick={() => someFx()}
           >
             Deploy Proposal!
           </button>
