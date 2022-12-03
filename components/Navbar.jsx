@@ -49,7 +49,7 @@ const Navbar = (props) => {
   });
 
   return (
-    <div id="navbar" className="navbar sticky top-0 z-50 text-secondary">
+    <div id="navbar" className="navbar sticky top-0 z-50 text-tertiary">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -97,7 +97,7 @@ const Navbar = (props) => {
             href="/"
             id="create"
             className="hidden md:block relative before:content-[''] before:absolute before:block before:w-full before:h-[1px] 
-              before:bottom-0 before:left-0 before:bg-black
+              before:bottom-0 before:left-0 before:bg-tertiary
               before:hover:scale-x-100 before:scale-x-0 before:origin-top-left
               before:transition before:ease-in-out before:duration-300
               active:after:content-[''] active:after:absolute active:after:block active:after:w-full active:after:h-[1px]"
@@ -107,7 +107,7 @@ const Navbar = (props) => {
           <Link
             href="/"
             className="hidden md:block relative before:content-[''] before:absolute before:block before:w-full before:h-[1px] 
-              before:bottom-0 before:left-0 before:bg-black
+              before:bottom-0 before:left-0 before:bg-tertiary
               before:hover:scale-x-100 before:scale-x-0 before:origin-top-left
               before:transition before:ease-in-out before:duration-300"
           >

@@ -66,7 +66,7 @@ const CreateProposal = () => {
                   required
                   onInput={(e) => setProposal(e.target.value)}
                 ></textarea>
-                <label className="px-5">{"Crew Description *"}</label>
+                <label className="px-5">{"Proposal Title*"}</label>
               </div>
             </div>
             <div className='w-full h-full flex flex-col sm:flex-row justify-end items-center'>

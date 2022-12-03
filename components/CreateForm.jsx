@@ -15,7 +15,7 @@ const BreadCrumb = (props) => {
           return (
             <li key={index} className="flex ">
               <div className="flex justify-evenly items-center">
-                <h1 className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white " onClick={() => setActiveTab(index)}>
+                <h1 className="inline-flex items-center text-sm font-medium text-tertiary hover:text-gray-900 dark:text-tertiary dark:hover:text-white " onClick={() => setActiveTab(index)}>
                   {item}
                 </h1>
                 <FontAwesomeIcon icon={faAngleRight} size="2x" className="h-5 w-5" />
@@ -24,7 +24,7 @@ const BreadCrumb = (props) => {
           );
         })}
         <li className="inline-flex justify-start items-center">
-          <h1 href="#" className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" onClick={() => setActiveTab(tabItems.length)}>
+          <h1 href="#" className="inline-flex items-center text-sm font-medium text-tertiary hover:text-gray-900 dark:text-tertiary dark:hover:text-white" onClick={() => setActiveTab(tabItems.length)}>
             Ahoy Sailors !
           </h1>
         </li>
@@ -168,7 +168,7 @@ const CreateForm = () => {
   const [isCrewCreated, setIsCrewCreated] = useState(false);
   return (
     <div className='w-screen h-screen flex justify-center items-start'>
-      <div className='w-10/12 h-10/12 flex justify-evenly items-center bg-black/40 rounded-xl text-white border border-secondary/40 hover:border-secondary/70'>
+      <div className='w-10/12 h-10/12 flex justify-evenly items-center backdrop-blur-md bg-quaternary/60 rounded-xl text-white border border-secondary/40 hover:border-secondary/70'>
         {!isCrewCreated ?
           (<div id="form" className='w-full h-full flex flex-col justify-evenly items-center p-5'>
             <h1 className="text-5xl font-semibold text-white font-raleway">
