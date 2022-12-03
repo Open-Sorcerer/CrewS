@@ -8,11 +8,11 @@ const Home = (props) => {
   return (
     <div>
       <Head>
-        <title>FEVM Asset Management</title>
+        <title>CREWS DataDAO</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="h-screen">
-        <SplineObj scene={"/CREWS.splinecode"} />
+        {/* <SplineObj scene={"/CREWS.splinecode"} /> */}
       </div>
       {!isAuthenticated ?
         <>

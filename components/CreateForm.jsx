@@ -39,7 +39,7 @@ const CrewDesc = (props) => {
     <div className='w-full h-full flex flex-col justify-evenly items-center'>
       <div className='w-full h-full flex flex-col justify-evenly items-start gap-10'>
         {activeTab === 0 && (
-          <div className='w-full h-full flex flex-col justify-start items-start gap-3'>
+          <div className='w-full h-full flex flex-col justify-start items-start gap-2 sm:gap-5'>
             <h1 className="text-2xl text-white">Name Yo Crew</h1>
             <p>What do you wanna name yo Crew?</p>
             <div className="user-box w-full md:w-1/3">
@@ -100,7 +100,7 @@ const CrewDesc = (props) => {
         )}
 
         {activeTab === 2 && (
-          <div className='w-full h-full flex flex-col justify-start items-start gap-5'>
+          <div className='w-full h-full flex flex-col justify-start items-start gap-3 sm:gap-5'>
             <h1 className="text-2xl text-white">Your Awesome Crew's Name</h1>
             <div className="user-box w-full md:w-1/3">
               <div className="relative inline-block px-4 py-2 font-medium group w-full sm:w-96">
@@ -129,7 +129,7 @@ const CrewDesc = (props) => {
               </div>
             </div>
             <h1 className="text-2xl text-white">Crew's Captain</h1>
-            <div className='w-full h-full flex flex-col sm:flex-row justify-evenly items-center'>
+            <div className='w-full h-full flex flex-col sm:flex-row justify-evenly items-center gap-2'>
               <div className="user-box w-full md:w-1/3">
                 <div className="relative inline-block px-4 py-2 font-medium group w-full sm:w-96">
                   <span className="absolute rounded-lg inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-tertiary border-[2px] border-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
@@ -168,13 +168,13 @@ const CreateForm = () => {
   const [isCrewCreated, setIsCrewCreated] = useState(false);
   return (
     <div className='w-screen h-screen flex justify-center items-start'>
-      <div className='w-10/12 h-10/12 flex justify-evenly items-center backdrop-blur-md bg-quaternary/60 rounded-xl text-white border border-secondary/40 hover:border-secondary/70'>
+      <div className='w-full h-fit sm:w-10/12 sm:h-10/12 flex justify-evenly items-center mt-20 sm:mt-0 backdrop-blur-md bg-quaternary/60 rounded-xl text-white border border-secondary/40 hover:border-secondary/70'>
         {!isCrewCreated ?
-          (<div id="form" className='w-full h-full flex flex-col justify-evenly items-center p-5'>
-            <h1 className="text-5xl font-semibold text-white font-raleway">
+          (<div id="form" className='w-full h-full flex flex-col justify-evenly items-center p-2 sm:p-5'>
+            <h1 className="text-2xl sm:text-3xl md:text-5xl font-semibold text-white font-raleway">
               Create yo DataDAO with CrewS with a few Clicks
             </h1>
-            <div className='w-full h-full flex flex-col justify-start items-start p-10 gap-10'>
+            <div className='w-full h-full flex flex-col justify-start items-start p-1 sm:p-10 gap-2 sm:gap-10'>
               <BreadCrumb setActiveTab={setActiveTab} activeTab={activeTab} />
               <CrewDesc activeTab={activeTab} name={name} setName={setName} desc={desc} setDesc={setDesc} address={address} setAddress={setAddress} setIsCrewCreated={setIsCrewCreated}/>
             </div>
