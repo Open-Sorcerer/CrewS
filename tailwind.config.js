@@ -11,6 +11,12 @@ module.exports = {
         'playfair': ['Playfair Display'],
         'raleway': ['Raleway'],
       },
+      colors: {
+        'primary': '#11379F',
+        'secondary': '#489BF1',
+        'tertiary': '#2EEF95',
+        'quaternary': '#0D0E18',
+      },
     },
   },
   daisyui: {

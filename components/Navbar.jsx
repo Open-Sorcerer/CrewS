@@ -8,6 +8,7 @@ import { useState } from 'react';
 const Navbar = (props) => {
   const { address, isConnected } = useAccount();
   const {setIsAuthenticated} = props;
+  setIsAuthenticated(isConnected);
   // TODO: Wallaby does not support ENS. Need a separate Ethereu provider to useEnsName
   // const { data: ensName } = useEnsName({ address });
   const { disconnect } = useDisconnect({
@@ -123,8 +124,8 @@ const Navbar = (props) => {
           }}
           className="relative inline-block px-4 py-2 font-medium group "
         >
-          <span className="absolute rounded-lg inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-[#bff22d] border-[2px] border-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
-          <span className="absolute rounded-lg inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-[#bff22d]"></span>
+          <span className="absolute rounded-lg inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-tertiary border-[2px] border-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+          <span className="absolute rounded-lg inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-tertiary"></span>
           {address ? (
             <span className="relative text-black">
               {address.slice(0, 6) + "..." + address.slice(-4)}
