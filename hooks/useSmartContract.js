@@ -31,9 +31,13 @@ export const useSmartContract = () => {
 
   const createDataDao = async () => {
     console.log("creating your data dao");
-    const tx = await dataDaoFactoryContract.createDataDao(address);
-    console.log(tx);
-    return tx;
+    try {
+      const tx = await dataDaoFactoryContract.createDataDao(address);
+      console.log(tx);
+      return tx;
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const getContractBalance = async () => {
