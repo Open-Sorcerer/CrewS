@@ -4,7 +4,7 @@ pragma solidity ^0.8.9;
 import "./DataDAO.sol";
 
 contract DataDoaFactory{
-    // factory contract onwer
+    // factory contract owner
     address public immutable dataDaoFactoryOwner;
 
     // number of DataDAO created
@@ -12,14 +12,14 @@ contract DataDoaFactory{
 
     // struct to store all the data of dataDao and dataDaoFactory contract
     struct dataDaoFactoryStruct {
-        address dataDaoOnwer;
+        address dataDaoOwner;
         address dataDaoFactoryOwner;
     }
 
     // searching the struct data of DataDao and DataDoaFactory using owner address
     mapping(address => dataDaoFactoryStruct) public allDataDaos;
 
-    // onwer address will be used check which address own/create a new dataDAO
+    // owner address will be used check which address own/create a new dataDAO
     // mapping(ownerAddress => smart contract address)
     mapping(address => address) public searchByAddress;
 
@@ -33,9 +33,9 @@ contract DataDoaFactory{
     /**
      * @dev function to create the contract DATADAO
      */
-    function createDataDao(address _dataDaoOnwer) public {
+    function createDataDao(address _dataDaoOwner) public {
         DataDAO dataDao = new DataDAO(
-            _dataDaoOnwer
+            _dataDaoOwner
         );
         // Increment the number of DataDao
         numOfDataDao++;
@@ -43,7 +43,7 @@ contract DataDoaFactory{
         // Add the new DataDAO to the mapping
         allDataDaos[msg.sender] = (
             dataDaoFactoryStruct(
-                msg.sender, // address of dataDAO onwer 
+                msg.sender, // address of dataDAO owner 
                 address(this)
             )
         );
