@@ -1,44 +1,19 @@
-# Next.js + Tailwind CSS Example
+# CrewS
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.2)](https://tailwindcss.com/blog/tailwindcss-v3-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+CrewS is a No Code Tool to create Data DAOs. With CrewS you can take your crew on chain quickly to manage data along with governance.
 
-## Deploy your own
+## Features
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+- Managing Proposals
+- OnChain Voting
+- Execution of proposals
+- Storing data as per the voting results
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+### Upcoming Features
 
-## How to use
+- Asset Management Tool
+- Streaming funds to make perpetual storage functionality
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+## Context on FVM
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
-
-### TODO
-
-- Creation Date should enforce a date - date picker maybe?
-- File uploaded should replace the gray square
-- Assign NFT previews - Images should be the same size, or at least scaled to the same width or height
-- Assign page's NFTPreviewDialog's button should be a "Exit" button. Maybe a red X?
-
-### DONE
-
-- Available underline
-- Clicking outside of the Assign dialog no longer closes
-
-### Presentation Notes
-
-- Setup demo address with oracle ahead of time
-- Upload image to IPFS ahead of time
+[FVM](https://fvm.filecoin.io/) enables a new kind of data-centric DAO that has heretofore been impossible. DataDAOs are DAOs whose mission revolves around the preservation, curation, augmentation, and promotion of datasets considered valuable by their stakeholders.
