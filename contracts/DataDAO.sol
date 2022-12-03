@@ -98,7 +98,7 @@ constructor(address _owner) {
     /**
      * @dev function to check whether the policy is accepted or not
      */
-    function policyOK(uint256 proposalID) internal view returns (bool) {
+    function policyOK(uint256 proposalID) public view returns (bool) {
         require(proposals[proposalID].proposalExpireAt > block.timestamp, "Voting in On");
         return proposals[proposalID].upVoteCount > proposals[proposalID].downVoteCount;
     }
@@ -133,21 +133,21 @@ constructor(address _owner) {
     /**
      * @dev function to get the storage provider address
      */
-     function getSP(uint256 proposalID) view internal returns(address) {
+     function getSP(uint256 proposalID) view public returns(address) {
         return proposals[proposalID].storageProvider;
     }
 
     /**
      * @dev function to check whether the function caller is the storage provider
      */
-    function isCallerSP(uint256 proposalID) view internal returns(bool) {
+    function isCallerSP(uint256 proposalID) view public returns(bool) {
        return getSP(proposalID) == msg.sender;
     }
 
     /**
      * @dev function to check whether users can start voting on the proposal
      */
-    function isVotingOn(uint256 proposalID) view internal returns(bool) {
+    function isVotingOn(uint256 proposalID) view public returns(bool) {
        return proposals[proposalID].proposalExpireAt > block.timestamp;
     }
 
