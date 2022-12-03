@@ -5,6 +5,7 @@ import { configureChains, createClient, WagmiConfig } from "wagmi";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 import dynamic from "next/dynamic";
 import SplineObj from "../components/SplineObj";
+import NextProgress from "next-progress";
 
 const fvmChain = {
   id: 31415,
@@ -60,6 +61,7 @@ function MyApp({ Component, pageProps }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   return (
     <div suppressHydrationWarning className="font-playfair bg-quaternary w-full h-screen overflow-hidden">
+      <NextProgress/>
       {typeof window !== "undefined" && client && (
         <WagmiConfig client={client}>
           <div>
