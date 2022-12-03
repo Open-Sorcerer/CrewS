@@ -6,7 +6,7 @@ import DAO from './DAO';
 const YourCrews = () => {
     const [selectedDAO, setSelectedDAO] = useState(0);
     const [DAOviewer, setDAOviewer] = useState(false);
-    const [makeNewDAO, setMakeNewDAO] = useState(false);
+    const [makeNewCrew, setMakeNewCrew] = useState(false);
     const [crews, setCrews] = useState([
         {
             id: 1,
@@ -33,7 +33,7 @@ const YourCrews = () => {
             {!DAOviewer ? (
 
                 <>
-                    {!makeNewDAO ? (
+                    {!makeNewCrew ? (
                         <div className='w-screen h-screen flex justify-center items-start'>
                             <div className='w-full h-fit sm:w-10/12 sm:h-10/12 flex justify-evenly items-center mt-20 sm:mt-0 backdrop-blur-md bg-quaternary/60 rounded-xl text-white border border-secondary/40 hover:border-secondary/70'>
                                 <div id="form" className='w-full h-full flex flex-col justify-evenly items-center p-2 sm:p-5'>
@@ -46,7 +46,7 @@ const YourCrews = () => {
                                             <span className="absolute rounded-lg inset-0 w-full h-full bg-secondary border-2 border-black group-hover:bg-tertiary"></span>
                                             <button
                                                 className="relative text-black text-xl font-semibold"
-                                                onClick={() => setMakeNewDAO(true)}>
+                                                onClick={() => setMakeNewCrew(true)}>
                                                 Create a new DAO
                                             </button>
                                         </div>
@@ -68,7 +68,7 @@ const YourCrews = () => {
                             </div>
                         </div>
                     ) : (
-                        <CreateForm />
+                        <CreateForm setMakeNewCrew={setMakeNewCrew}/>
                     )}
                 </>
             ) : <DAO selectedDAO={selectedDAO}/>

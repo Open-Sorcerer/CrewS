@@ -28,7 +28,6 @@ const Home = (props) => {
         </>
         :
         <div className="h-full w-full absolute top-0 z-100 text-white flex flex-col justify-center items-center gap-5 sm:gap-6 rounded-lg p-3 sm:p-16 bg-quaternary/50">
-          {/* <CreateForm /> */}
           <YourCrews/>
         </div>
       }

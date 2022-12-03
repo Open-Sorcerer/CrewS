@@ -34,12 +34,12 @@ const BreadCrumb = (props) => {
 }
 
 const CrewDesc = (props) => {
-  const { activeTab, name, setName, desc, setDesc, address, setAddress, setIsCrewCreated } = props;
+  const { activeTab, setActiveTab, name, setName, desc, setDesc, address, setAddress, setIsCrewCreated } = props;
   return (
     <div className='w-full h-full flex flex-col justify-evenly items-center'>
       <div className='w-full h-full flex flex-col justify-evenly items-start gap-10'>
         {activeTab === 0 && (
-          <div className='w-full h-full flex flex-col justify-start items-start gap-2 sm:gap-5'>
+          <div className='w-full h-full flex flex-col justify-start items-start gap-1 sm:gap-3'>
             <h1 className="text-2xl text-white">Name Yo Crew</h1>
             <p>What do you wanna name yo Crew?</p>
             <div className="user-box w-full md:w-1/3">
@@ -74,6 +74,27 @@ const CrewDesc = (props) => {
                 <label className="px-5">{"Crew Description *"}</label>
               </div>
             </div>
+            <div className='w-full h-full flex flex-col sm:flex-row justify-end items-center gap-3'>
+              <div className="relative inline-block px-4 py-2 font-medium group w-full sm:w-96">
+                <span className="absolute rounded-lg inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-tertiary border-[2px] border-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                <span className="absolute rounded-lg inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-tertiary"></span>
+                <button
+                  className="relative text-black text-xl font-semibold"
+                  onClick={() => setMakeNewCrew(false)}>
+                  Abort Crew Creation
+                </button>
+              </div>
+
+              <div className="relative inline-block px-4 py-2 font-medium group w-full sm:w-40">
+                <span className="absolute rounded-lg inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-tertiary border-[2px] border-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                <span className="absolute rounded-lg inset-0 w-full h-full bg-secondary border-2 border-black group-hover:bg-tertiary"></span>
+                <button
+                  className="relative text-black text-xl font-semibold"
+                  onClick={() => setActiveTab(activeTab + 1)}>
+                  Forward
+                </button>
+              </div>
+            </div>
           </div>
         )}
 
@@ -94,6 +115,27 @@ const CrewDesc = (props) => {
                   value={address}
                 ></input>
                 <label className="px-5">{"Address *"}</label>
+              </div>
+            </div>
+            <div className='w-full h-full flex flex-col sm:flex-row justify-end items-center gap-3'>
+              <div className="relative inline-block px-4 py-2 font-medium group w-full sm:w-40">
+                <span className="absolute rounded-lg inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-tertiary border-[2px] border-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                <span className="absolute rounded-lg inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-tertiary"></span>
+                <button
+                  className="relative text-black text-xl font-semibold"
+                  onClick={() => setActiveTab(activeTab - 1)}>
+                  Fall Back
+                </button>
+              </div>
+
+              <div className="relative inline-block px-4 py-2 font-medium group w-full sm:w-40">
+                <span className="absolute rounded-lg inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-tertiary border-[2px] border-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                <span className="absolute rounded-lg inset-0 w-full h-full bg-secondary border-2 border-black group-hover:bg-tertiary"></span>
+                <button
+                  className="relative text-black text-xl font-semibold"
+                  onClick={() => setActiveTab(activeTab + 1)}>
+                  Forward
+                </button>
               </div>
             </div>
           </div>
@@ -143,8 +185,18 @@ const CrewDesc = (props) => {
                   ></input>
                 </div>
               </div>
-              <div className='w-full h-full flex flex-col sm:flex-row justify-end items-center'>
-                <div className="relative inline-block px-4 py-2 font-medium group w-full sm:w-96">
+              <div className='w-full h-full flex flex-col sm:flex-row justify-end items-center gap-3'>
+              <div className="relative inline-block px-4 py-2 font-medium group w-full sm:w-40">
+                <span className="absolute rounded-lg inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-tertiary border-[2px] border-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                <span className="absolute rounded-lg inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-tertiary"></span>
+                <button
+                  className="relative text-black text-xl font-semibold"
+                  onClick={() => setActiveTab(activeTab-1)}>
+                  Fall Back
+                </button>
+              </div>
+
+              <div className="relative inline-block px-4 py-2 font-medium group w-full sm:w-96">
                   <span className="absolute rounded-lg inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-tertiary border-[2px] border-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
                   <span className="absolute rounded-lg inset-0 w-full h-full bg-secondary border-2 border-black group-hover:bg-tertiary"></span>
                   <button
@@ -153,7 +205,7 @@ const CrewDesc = (props) => {
                     Brace Yo'selves!
                   </button>
                 </div>
-              </div>
+            </div>
             </div>
           </div>
         )}
@@ -162,7 +214,8 @@ const CrewDesc = (props) => {
   )
 }
 
-const CreateForm = () => {
+const CreateForm = (props) => {
+  const {setMakeNewCrew} = props;
   const [activeTab, setActiveTab] = useState(0);
   const [name, setName] = useState("");
   const [desc, setDesc] = useState("");
@@ -179,7 +232,7 @@ const CreateForm = () => {
               </h1>
               <div className='w-full h-full flex flex-col justify-start items-start p-1 sm:p-10 gap-2 sm:gap-10'>
                 <BreadCrumb setActiveTab={setActiveTab} activeTab={activeTab} />
-                <CrewDesc activeTab={activeTab} name={name} setName={setName} desc={desc} setDesc={setDesc} address={address} setAddress={setAddress} setIsCrewCreated={setIsCrewCreated} />
+                <CrewDesc activeTab={activeTab} setActiveTab={setActiveTab} name={name} setName={setName} desc={desc} setDesc={setDesc} address={address} setAddress={setAddress} setIsCrewCreated={setIsCrewCreated} />
               </div>
             </div>
           </div>
