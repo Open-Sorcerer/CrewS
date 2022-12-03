@@ -73,10 +73,10 @@ const Navbar = (props) => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow rounded-box w-52 bg-quaternary"
           >
             <li>
-              <Link href="/">Create Vault</Link>
+              <Link href="/">Home</Link>
             </li>
             <li>
-              <Link href="/">About Us</Link>
+              <Link href="/about">About Us</Link>
             </li>
           </ul>
         </div>
@@ -102,10 +102,10 @@ const Navbar = (props) => {
               before:transition before:ease-in-out before:duration-300
               active:after:content-[''] active:after:absolute active:after:block active:after:w-full active:after:h-[1px]"
           >
-            Create Vault
+            Home
           </Link>
           <Link
-            href="/"
+            href="/about"
             className="hidden md:block relative before:content-[''] before:absolute before:block before:w-full before:h-[1px] 
               before:bottom-0 before:left-0 before:bg-tertiary
               before:hover:scale-x-100 before:scale-x-0 before:origin-top-left

@@ -4,6 +4,7 @@ import { Toaster } from "react-hot-toast";
 import { configureChains, createClient, WagmiConfig } from "wagmi";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 import dynamic from "next/dynamic";
+import SplineObj from "../components/SplineObj";
 
 const fvmChain = {
   id: 31415,
@@ -47,6 +48,14 @@ if (typeof window !== "undefined") {
   });
 }
 
+const Spline = () => {
+  return (
+    <div className="h-screen" >
+      <SplineObj scene={"/CREWS.splinecode"} />
+    </div>
+  )
+}
+
 function MyApp({ Component, pageProps }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   return (
@@ -54,8 +63,9 @@ function MyApp({ Component, pageProps }) {
       {typeof window !== "undefined" && client && (
         <WagmiConfig client={client}>
           <div>
-            <Navbar suppressHydrationWarning setIsAuthenticated={setIsAuthenticated}/>
-            <Component {...pageProps} isAuthenticated={isAuthenticated}/>
+            <Navbar suppressHydrationWarning setIsAuthenticated={setIsAuthenticated} />
+            <Spline />
+            <Component {...pageProps} isAuthenticated={isAuthenticated} Spline={Spline}/>
             <Toaster />
           </div>
         </WagmiConfig>
