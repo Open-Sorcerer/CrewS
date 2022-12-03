@@ -43,9 +43,30 @@ export const useSmartContract = () => {
     return balance;
   };
 
+  const getDataDao = async () => {
+    console.log("fetching data dao");
+    const dataDao = await dataDaoFactoryContract.searchByAddress(address);
+    console.log(dataDao);
+    return dataDao;
+  };
+
+  const getDataDaoMetadata = async () => {
+    console.log("fetching data dao metadata");
+    const dataDaoContract = new ethers.Contract(
+      getDataDao(),
+      DataDaoABI,
+      wallet
+    );
+    const proposals = await dataDaoContract.proposals[0];
+    console.log(proposals);
+    return proposals;
+  };
+
   return {
     getAddress,
     createDataDao,
     getContractBalance,
+    getDataDao,
+    getDataDaoMetadata,
   };
 };
