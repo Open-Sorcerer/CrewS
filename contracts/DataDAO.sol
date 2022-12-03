@@ -23,7 +23,7 @@ contract MockMarket {
 
 }
 
-contract DataDAO{
+contract DataDAO {
     uint64 constant public AUTHORIZE_MESSAGE_METHOD_NUM = 2643134072; 
     // number of proposals currently in DAO
     uint256 public proposalCount;
