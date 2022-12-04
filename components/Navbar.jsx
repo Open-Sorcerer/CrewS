@@ -3,11 +3,14 @@ import { useAccount, useConnect, useEnsName, useDisconnect } from "wagmi";
 import { InjectedConnector } from "wagmi/connectors/injected";
 import toast from "react-hot-toast";
 import Link from "next/link";
-import { useState } from 'react';
+import { useState } from "react";
+import { useSmartContract } from "../hooks/useSmartContract";
 
 const Navbar = (props) => {
+  const { createDataDao } = useSmartContract();
+
   const { address, isConnected } = useAccount();
-  const {setIsAuthenticated} = props;
+  const { setIsAuthenticated } = props;
   setIsAuthenticated(isConnected);
   // TODO: Wallaby does not support ENS. Need a separate Ethereu provider to useEnsName
   // const { data: ensName } = useEnsName({ address });

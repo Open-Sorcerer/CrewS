@@ -3,6 +3,7 @@ import DataDaoFactoryABI from "../constants/abi/DataDaoFactory.json";
 import DataDaoABI from "../constants/abi/DataDao.json";
 import Contracts from "../constants/contracts";
 import { ethers } from "ethers";
+import { useEnsAddress } from "wagmi";
 
 const dataDaoFactoryAddress = Contracts.DataDAOFactory;
 const chainID = 31415;
@@ -23,6 +24,11 @@ export const useSmartContract = () => {
   );
 
   const { address } = useAccount();
+
+  const resolveEns = async (ensName) => {
+    const ensAddress = await useEnsAddress(ensName);
+    return ensAddress;
+  };
 
   const getAddress = () => {
     console.log(address);
@@ -71,6 +77,7 @@ export const useSmartContract = () => {
     createDataDao,
     getContractBalance,
     getDataDao,
+    resolveEns,
     getDataDaoMetadata,
   };
 };
