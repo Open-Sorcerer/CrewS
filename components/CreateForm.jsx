@@ -59,8 +59,7 @@ const CrewDesc = (props) => {
     setIsCrewCreated,
     setMakeNewCrew,
   } = props;
-
-  const { createDataDAO } = useSmartContract();
+  const { createDataDao } = useSmartContract();
   return (
     <div className="w-full h-full flex flex-col justify-evenly items-center">
       <div className="w-full h-full flex flex-col justify-evenly items-start gap-10">
@@ -245,7 +244,7 @@ const CrewDesc = (props) => {
                   <button
                     className="relative text-black text-xl font-semibold"
                     onClick={() => {
-                      // createDataDAO(address);
+                      createDataDao(address);
                       setIsCrewCreated(true);
                     }}
                   >
@@ -262,7 +261,6 @@ const CrewDesc = (props) => {
 };
 
 const CreateForm = (props) => {
-  const { createDataDAO } = useSmartContract();
   const { setMakeNewCrew } = props;
   const [activeTab, setActiveTab] = useState(0);
   const [name, setName] = useState("");
@@ -294,7 +292,7 @@ const CreateForm = (props) => {
                   setAddress={setAddress}
                   setIsCrewCreated={setIsCrewCreated}
                   setMakeNewCrew={setMakeNewCrew}
-                  createDataDAO={createDataDAO}
+                  // createDataDAO={createDataDao}
                 />
               </div>
             </div>
