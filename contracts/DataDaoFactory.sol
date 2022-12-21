@@ -73,7 +73,7 @@ contract DataDoaFactory{
         require(success, "TRANSFER_FAILED");
     }
 
-    // get the address of trustFactory contract owner
+    // get the address of DataDaoFactory contract owner
     function getAddressOfDataDaoFactoryOwner() public view returns (address) {
         return dataDaoFactoryOwner;
     }
