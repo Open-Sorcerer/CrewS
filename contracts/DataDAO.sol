@@ -1,4 +1,5 @@
-// first we need to deploy DataDao contract
+// first deploy factory contract
+// then we need to deploy DataDao contract
 // then put contract address on MockMarket
 
 // SPDX-License-Identifier: GPL-3.0
