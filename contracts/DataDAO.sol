@@ -2,7 +2,7 @@
 // then we need to deploy DataDao contract
 // then put contract address on MockMarket
 
-// SPDX-License-Identifier: GPL-3.0
+// SPDX-License-Identifier: UNLICENSED
 
 pragma solidity ^0.8.13;
 
